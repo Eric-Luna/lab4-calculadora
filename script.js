@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
+
 $(".btn").click(function() {
     console.log(this.innerHTML);
-    if(this.innerHTML != '=' && this.innerHTML != 'C'){
+    if(this.innerHTML != '=' && this.innerHTML != 'C' && this.innerHTML != 'Borrar'){
         let txt = $("#calculator-result").val() + this.innerHTML; 
         $("#calculator-result").val(txt);
     }
@@ -36,6 +37,8 @@ $(".btn").click(function() {
             $("#listHistorial").after('<li>' + txt_unmodified + ' = ' + resultado + '</li>');
         }
         $("#calculator-result").val(resultado);
+    }else if(this.innerHTML == 'Borrar'){
+        $('li').remove();
     }
     else{
         $("#calculator-result").val("");
